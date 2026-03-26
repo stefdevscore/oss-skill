@@ -18,6 +18,7 @@ A skill that provides high-level guidance on creating, writing, and distributing
 
 ```
 ├── SKILL.md                      # Main skill instructions
+├── RESEARCH.md                   # Roadmap and future additions
 ├── references/
 │   ├── LICENSING.md              # License comparison and decision guide
 │   ├── DISTRIBUTION.md           # Distribution channels and release practices
@@ -46,6 +47,7 @@ A skill that provides high-level guidance on creating, writing, and distributing
 
 | Guide | Description |
 |---|---|
+| [RESEARCH.md](RESEARCH.md) | Roadmap for future ecosystem expansions and advanced OSS patterns |
 | [LICENSING.md](references/LICENSING.md) | Comparison matrix of common OSS licenses, decision flowchart, and how to apply a license |
 | [DISTRIBUTION.md](references/DISTRIBUTION.md) | Package registries by ecosystem, SemVer, changelogs, and release automation |
 | [GOVERNANCE.md](references/GOVERNANCE.md) | Governance models, community health files, contributor roles, and funding strategies |
