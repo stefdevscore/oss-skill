@@ -1,10 +1,10 @@
 # Distribution Reference
 
-## Overview
+## 1. Overview
 
 Distribution is how your open-source software reaches users. Choosing the right channels and following best practices for versioning and releases ensures your software is discoverable, installable, and trustworthy.
 
-## Package Registries by Ecosystem
+## 2. Channels (Registries & System Package Managers)
 
 | Ecosystem | Registry | Publish Command | Manifest File |
 |---|---|---|---|
@@ -39,7 +39,7 @@ Distribution is how your open-source software reaches users. Choosing the right 
 - **Snapcraft / Flatpak** — cross-distro Linux packaging.
 - **winget / Chocolatey / Scoop** (Windows) — Windows package managers.
 
-## Semantic Versioning (SemVer)
+## 3. Versioning Semantics (SemVer)
 
 Follow [semver.org](https://semver.org) for version numbers: `MAJOR.MINOR.PATCH`
 
@@ -61,7 +61,7 @@ Use pre-release identifiers for unstable releases:
 - `0.x.y` signals the API is unstable and may change at any time.
 - Once stable, release `1.0.0`.
 
-## Changelogs
+## 4. Changelogs & Release Automation
 
 Follow [Keep a Changelog](https://keepachangelog.com):
 
@@ -114,7 +114,7 @@ jobs:
 - **GoReleaser** — cross-compile and release Go binaries.
 - **release-please** — Google's automated release PR tool.
 
-## Distribution Checklist
+## 5. Distribution Checklist
 
 - [ ] Package manifest has complete metadata (name, version, description, license, repository URL)
 - [ ] README includes installation instructions for each distribution channel
@@ -124,3 +124,9 @@ jobs:
 - [ ] Release is tagged in Git
 - [ ] Pre-built binaries are available for relevant platforms (if applicable)
 - [ ] Registry access tokens are stored as secrets, never committed
+
+## 6. Resources
+
+- [semver.org](https://semver.org)
+- [Keep a Changelog](https://keepachangelog.com)
+- [release-please](https://github.com/googleapis/release-please)

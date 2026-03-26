@@ -1,10 +1,10 @@
 # Governance Reference
 
-## Overview
+## 1. Overview
 
 Governance defines how decisions are made, who has authority, and how contributors advance within a project. The right model depends on the project's size, community, and goals.
 
-## Governance Models
+## 2. Governance Models
 
 ### BDFL (Benevolent Dictator for Life)
 
@@ -27,14 +27,15 @@ Governance defines how decisions are made, who has authority, and how contributo
 - **Examples**: Node.js TSC, Kubernetes Steering Committee.
 - **Risks**: slow decision-making, political dynamics.
 
-### Foundation-Backed
+### Foundation Incubation (CNCF/Apache)
 
-- **How it works**: a legal entity (foundation) provides governance structure, funding, and legal protection.
-- **Best for**: large, critical-infrastructure projects.
-- **Examples**: Apache Foundation, Linux Foundation, OpenJS Foundation, CNCF, Eclipse Foundation.
-- **Risks**: bureaucratic overhead, may not suit small projects.
+Projects seeking maximum scale often donate their IP to a neutral foundation.
 
-## Governance Comparison
+- **CNCF Sandbox/Incubating:** Focuses on cloud-native technology, provides marketing and legal support.
+- **Apache Incubator:** Focuses on the "Apache Way" (meritocracy, community over code).
+- **Requirements:** Usually requires a diverse set of maintainers from different companies to avoid "single-vendor" lock-in.
+
+## 3. Community Health Files
 
 | Model | Decision Speed | Scalability | Bus Factor | Overhead |
 |---|---|---|---|---|
@@ -77,7 +78,7 @@ Place in `.github/ISSUE_TEMPLATE/` and `.github/PULL_REQUEST_TEMPLATE.md`:
 - **Feature request template**: problem statement, proposed solution, alternatives considered.
 - **PR template**: description of changes, related issues, testing done, checklist.
 
-## Contributor Roles
+## 4. Contributor Roles & Progression
 
 A common progression:
 
@@ -89,7 +90,7 @@ A common progression:
 | **Committer** | Merge PRs | Consistent quality contributions |
 | **Maintainer** | Release, admin | Long-term stewardship and trust |
 
-## Sustainability
+## 5. Sustainability & Maintainer Wellbeing
 
 ### Funding Models
 
@@ -117,7 +118,7 @@ A common progression:
 - Use automation (bots, CI) to reduce repetitive burden.
 - Take breaks and communicate availability to the community.
 
-## Resources
+## 6. Resources
 
 - [opensource.guide](https://opensource.guide) — GitHub's comprehensive OSS guides
 - [Contributor Covenant](https://www.contributor-covenant.org) — code of conduct standard

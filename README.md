@@ -23,6 +23,7 @@ A skill that provides high-level guidance on creating, writing, and distributing
 │   ├── LICENSING.md              # License comparison and decision guide
 │   ├── DISTRIBUTION.md           # Distribution channels and release practices
 │   ├── GOVERNANCE.md             # Governance models and sustainability
+│   ├── SECURITY.md               # Supply chain and vulnerability disclosure
 │   │
 │   ├── typescript/
 │   │   ├── PROJECT.md            # TypeScript project setup and patterns
@@ -52,6 +53,7 @@ A skill that provides high-level guidance on creating, writing, and distributing
 | [LICENSING.md](references/LICENSING.md) | Comparison matrix of common OSS licenses, decision flowchart, and how to apply a license |
 | [DISTRIBUTION.md](references/DISTRIBUTION.md) | Package registries by ecosystem, SemVer, changelogs, and release automation |
 | [GOVERNANCE.md](references/GOVERNANCE.md) | Governance models, community health files, contributor roles, and funding strategies |
+| [SECURITY.md](references/SECURITY.md) | Supply chain security, SBOM, Sigstore, and vulnerability response lifecycle |
 
 ### TypeScript / JavaScript Layer
 

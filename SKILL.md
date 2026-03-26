@@ -52,6 +52,7 @@ Optional inputs:
 - license preference (permissive, copyleft, public domain)
 - distribution targets (npm, PyPI, Docker Hub, GitHub Releases, Homebrew, etc.)
 - governance preference (solo maintainer, committee, foundation)
+- security requirements (SLSA, SBOM, signing)
 - existing repo state (greenfield or adding OSS practices to an existing project)
 
 Assumptions:
@@ -67,6 +68,16 @@ Produce:
 - file templates and scaffolding (LICENSE, README, CONTRIBUTING, etc.)
 - recommended tooling and configurations
 - checklists for launch readiness and ongoing maintenance
+
+## Reference Guides (Core)
+
+| Guide | Covers |
+|---|---|
+| [RESEARCH.md](RESEARCH.md) | Roadmap for future ecosystem expansions and advanced OSS patterns |
+| [LICENSING.md](references/LICENSING.md) | Comparison matrix of common OSS licenses, decision flowchart, and how to apply a license |
+| [DISTRIBUTION.md](references/DISTRIBUTION.md) | Package registries by ecosystem, SemVer, changelogs, and release automation |
+| [GOVERNANCE.md](references/GOVERNANCE.md) | Governance models, community health files, contributor roles, and funding strategies |
+| [SECURITY.md](references/SECURITY.md) | Supply chain security, SBOM, Sigstore, and vulnerability response lifecycle |
 
 ## Steps / Procedure
 
@@ -153,6 +164,12 @@ See [typescript/PROJECT.md](references/typescript/PROJECT.md) for detailed TypeS
 - Document decision-making processes.
 - Explore sustainability options: sponsorships, grants, open-collective, dual licensing, paid support.
 - Plan for maintainer succession and bus-factor reduction.
+
+### 11. Secure the project
+
+- Implement dependency scanning and SBOM generation.
+- Establish a private vulnerability disclosure process.
+- Sign releases and commits.
 
 ### 10. Maintain over time
 

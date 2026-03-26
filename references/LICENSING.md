@@ -1,12 +1,12 @@
 # Open-Source Licensing Reference
 
-## Overview
+## 1. Overview
 
 An open-source license defines how others may use, modify, and distribute your software. Choosing the right license is one of the most important decisions when releasing an OSS project.
 
 > **Not legal advice.** This reference provides general guidance. Consult a qualified attorney for specific licensing questions.
 
-## License Categories
+## 2. License Categories & Matrix
 
 ### Permissive Licenses
 
@@ -37,7 +37,7 @@ Waive all copyright, placing the work in the public domain. Maximally permissive
 
 *GPL/AGPL allow commercial use, but derivative works must also be GPL/AGPL-licensed.
 
-## Decision Guide
+## 3. Decision Guide & Application (How-to)
 
 ```
 Do you want maximum adoption with minimal friction?
@@ -67,7 +67,7 @@ Do you want maximum adoption with minimal friction?
    ```
 4. **State the license in README.md** with a badge or a dedicated section.
 
-## Multi-Licensing
+## 4. Multi-Licensing & Agreements (CLAs)
 
 Some projects offer multiple licenses to accommodate different use cases:
 
@@ -82,7 +82,7 @@ Express dual licensing in SPDX notation: `MIT OR Apache-2.0`.
 - Alternatives: Developer Certificate of Origin (DCO) is lighter-weight and increasingly preferred.
 - Tools: CLA Assistant, DCO bot.
 
-## Resources
+## 5. Resources
 
 - [choosealicense.com](https://choosealicense.com) — GitHub's license chooser
 - [SPDX License List](https://spdx.org/licenses/) — canonical license identifiers
