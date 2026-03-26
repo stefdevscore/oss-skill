@@ -1,10 +1,10 @@
 # TypeScript Project Reference
 
-## Overview
+## 1. Overview
 
 This reference covers TypeScript-specific project setup, configuration, and patterns for open-source libraries and tools. The assumed workflow is **TypeScript for source code** and **JavaScript (`.mjs` / `.js`) for tests, scripts, and config files**.
 
-## Project Structure
+## 2. Project Structure
 
 ```
 project-root/
@@ -34,7 +34,7 @@ project-root/
 - **`dist/`** — build output, always gitignored, included in npm package via `files`.
 - **`scripts/`** — automation scripts in `.mjs` for Node.js ESM compatibility.
 
-## tsconfig.json
+## 3. Configuration (tsconfig)
 
 ### Recommended Base for Libraries
 
@@ -98,7 +98,7 @@ Create `tsconfig.build.json` to exclude test helpers and scripts:
 | `verbatimModuleSyntax` | Enforces explicit `import type` for type-only imports |
 | `isolatedModules` | Ensures compatibility with single-file transpilers (esbuild, swc) |
 
-## Module Systems
+## 4. Modules & Types
 
 ### ESM-First (Recommended)
 
@@ -144,7 +144,7 @@ If you must support both module systems, use the `exports` map in `package.json`
 
 Use a bundler like `tsup` to produce both outputs from a single source.
 
-## Type Declarations
+### Type Declarations
 
 ### Generating `.d.ts` Files
 
@@ -190,7 +190,7 @@ Or with the `exports` map (preferred):
 }
 ```
 
-## Path Aliases
+### Path Aliases
 
 ### Setting Up in tsconfig.json
 
@@ -223,7 +223,7 @@ Or with the `exports` map (preferred):
 
 This is resolved natively by Node.js and requires no build step.
 
-## TypeScript with JavaScript Tests
+### JS Tests
 
 ### Why JS for Tests
 
@@ -251,7 +251,7 @@ Runners like `vitest` can import `.ts` files directly, even in `.mjs` test files
 import { myFunction } from '../src/index.ts';
 ```
 
-## Resources
+## 5. Resources
 
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/) — official docs
 - [tsconfig reference](https://www.typescriptlang.org/tsconfig) — all compiler options

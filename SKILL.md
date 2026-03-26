@@ -170,9 +170,9 @@ For projects using **TypeScript as the primary language** with **JavaScript for 
 
 | Guide | Covers |
 |---|---|
-| [typescript/PROJECT.md](references/typescript/PROJECT.md) | `tsconfig.json`, project structure, module systems (ESM/CJS), type declarations, path aliases, JS test patterns |
-| [typescript/TOOLING.md](references/typescript/TOOLING.md) | Build tools (tsup, esbuild), test frameworks (vitest, jest, node:test), linting (ESLint flat config), formatting, CI/CD workflows, docs (TypeDoc), release management |
-| [typescript/PUBLISHING.md](references/typescript/PUBLISHING.md) | `package.json` fields, `exports` map, dual CJS/ESM, `files` allowlist, scoped packages, npm provenance, versioning, dist-tags |
+| [typescript/PROJECT.md](references/typescript/PROJECT.md) | tsconfig, project structure, module systems (ESM/CJS), type declarations, path aliases |
+| [typescript/TOOLING.md](references/typescript/TOOLING.md) | Package managers, build tools (tsup), testing (vitest), linting (ESLint), CI/CD, and docs |
+| [typescript/PUBLISHING.md](references/typescript/PUBLISHING.md) | package.json fields, exports map, npm provenance, scoped packages, and dist-tags |
 
 ### Quick-Start: TypeScript OSS Library
 
@@ -195,9 +195,9 @@ For projects using **Python**, the following reference guides provide ecosystem-
 
 | Guide | Covers |
 |---|---|
-| [python/PROJECT.md](references/python/PROJECT.md) | Project structure (src layout), `pyproject.toml`, type hints (PEP 561), virtual environments, lock files, dependency management |
-| [python/TOOLING.md](references/python/TOOLING.md) | `uv`, `pytest`, `ruff`, `mypy`, CI/CD workflows, documentation (Sphinx, MkDocs), task runners |
-| [python/PUBLISHING.md](references/python/PUBLISHING.md) | Building packages, trusted publishing (OIDC), API tokens, TestPyPI, classifiers, versioning (PEP 440) |
+| [python/PROJECT.md](references/python/PROJECT.md) | Project structure (src layout), pyproject.toml, and type hints (PEP 561) |
+| [python/TOOLING.md](references/python/TOOLING.md) | uv, venv, pytest, ruff, mypy, CI/CD workflows, documentation, and task runners |
+| [python/PUBLISHING.md](references/python/PUBLISHING.md) | Building packages, trusted publishing (OIDC), versioning (PEP 440), and pre-publish checklist |
 
 ### Quick-Start: Python OSS Library
 
@@ -220,8 +220,9 @@ For projects using **Rust**, the following reference guides provide ecosystem-sp
 
 | Guide | Covers |
 |---|---|
-| [rust/PROJECT.md](references/rust/PROJECT.md) | Project structure (lib/bin/workspace), `Cargo.toml`, editions, MSRV, feature flags, built-in testing, clippy, rustfmt, CI/CD, docs.rs, cross-compilation |
-| [rust/PUBLISHING.md](references/rust/PUBLISHING.md) | crates.io metadata, dual licensing (MIT OR Apache-2.0), package contents, scoped tokens, `cargo publish`, `cargo-release`, yanking, binary releases with `cargo-dist` |
+| [rust/PROJECT.md](references/rust/PROJECT.md) | Project structure (lib/bin/workspace), Cargo.toml, editions, and features |
+| [rust/TOOLING.md](references/rust/TOOLING.md) | cargo test, clippy, rustfmt, rustdoc, and CI/CD with cargo-dist |
+| [rust/PUBLISHING.md](references/rust/PUBLISHING.md) | crates.io metadata, dual licensing, cargo publish, cargo-release, and yanking |
 
 ### Quick-Start: Rust OSS Library
 

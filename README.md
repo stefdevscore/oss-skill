@@ -34,9 +34,10 @@ A skill that provides high-level guidance on creating, writing, and distributing
 │   │   ├── TOOLING.md            # Python build, test, lint, and release tools
 │   │   └── PUBLISHING.md         # PyPI publishing guide
 │   │
-│   └── rust/
-│       ├── PROJECT.md            # Rust project setup and patterns
-│       └── PUBLISHING.md         # crates.io publishing guide
+│   ├── rust/
+│   │   ├── PROJECT.md            # Rust project setup and patterns
+│   │   ├── TOOLING.md            # Rust testing, clippy, CI/CD, and docs
+│   │   └── PUBLISHING.md         # crates.io publishing guide
 ├── README.md
 └── LICENSE
 ```
@@ -56,24 +57,25 @@ A skill that provides high-level guidance on creating, writing, and distributing
 
 | Guide | Description |
 |---|---|
-| [typescript/PROJECT.md](references/typescript/PROJECT.md) | tsconfig, project structure, module systems (ESM/CJS), type declarations, path aliases, JS test patterns |
-| [typescript/TOOLING.md](references/typescript/TOOLING.md) | Build tools (tsup, esbuild), testing (vitest, jest), linting (ESLint), formatting, CI/CD, docs, release management |
-| [typescript/PUBLISHING.md](references/typescript/PUBLISHING.md) | package.json fields, exports map, dual CJS/ESM, scoped packages, npm provenance, versioning |
+| [typescript/PROJECT.md](references/typescript/PROJECT.md) | tsconfig, project structure, module systems (ESM/CJS), type declarations, path aliases |
+| [typescript/TOOLING.md](references/typescript/TOOLING.md) | Package managers, build tools (tsup), testing (vitest), linting (ESLint), CI/CD, and docs |
+| [typescript/PUBLISHING.md](references/typescript/PUBLISHING.md) | package.json fields, exports map, npm provenance, scoped packages, and dist-tags |
 
 ### Python Layer
 
 | Guide | Description |
 |---|---|
-| [python/PROJECT.md](references/python/PROJECT.md) | Project structure (src layout), pyproject.toml, type hints (PEP 561), virtual environments, dependency management |
-| [python/TOOLING.md](references/python/TOOLING.md) | uv, pytest, ruff, mypy, CI/CD workflows, documentation (Sphinx, MkDocs), task runners |
-| [python/PUBLISHING.md](references/python/PUBLISHING.md) | Building packages, trusted publishing (OIDC), TestPyPI, classifiers, versioning (PEP 440) |
+| [python/PROJECT.md](references/python/PROJECT.md) | Project structure (src layout), pyproject.toml, and type hints (PEP 561) |
+| [python/TOOLING.md](references/python/TOOLING.md) | uv, venv, pytest, ruff, mypy, CI/CD workflows, documentation, and task runners |
+| [python/PUBLISHING.md](references/python/PUBLISHING.md) | Building packages, trusted publishing (OIDC), versioning (PEP 440), and pre-publish checklist |
 
 ### Rust Layer
 
 | Guide | Description |
 |---|---|
-| [rust/PROJECT.md](references/rust/PROJECT.md) | Project structure (lib/bin/workspace), Cargo.toml, editions, features, testing, clippy, cross-compilation |
-| [rust/PUBLISHING.md](references/rust/PUBLISHING.md) | crates.io metadata, dual licensing, cargo publish, cargo-release, yanking, binary releases |
+| [rust/PROJECT.md](references/rust/PROJECT.md) | Project structure (lib/bin/workspace), Cargo.toml, editions, and features |
+| [rust/TOOLING.md](references/rust/TOOLING.md) | cargo test, clippy, rustfmt, rustdoc, and CI/CD with cargo-dist |
+| [rust/PUBLISHING.md](references/rust/PUBLISHING.md) | crates.io metadata, dual licensing, cargo publish, cargo-release, and yanking |
 
 ## License
 

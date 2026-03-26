@@ -1,10 +1,10 @@
 # Python Project Reference
 
-## Overview
+## 1. Overview
 
 This reference covers Python-specific project setup, configuration, and patterns for open-source libraries, CLI tools, and applications. Python's packaging landscape has converged around `pyproject.toml` as the single source of truth.
 
-## Project Structure
+## 2. Project Structure
 
 ```
 project-root/
@@ -35,7 +35,7 @@ project-root/
 
 **Recommended**: src layout for anything published to PyPI.
 
-## pyproject.toml
+## 3. Configuration (pyproject.toml)
 
 ### Complete Example
 
@@ -98,7 +98,7 @@ my-cli = "my_package.cli:main"
 
 **Recommended**: `hatchling` for new projects.
 
-## Type Hints
+## 4. Modules & Types (Type Hints)
 
 ### Why Type Hints Matter for OSS
 
@@ -134,60 +134,7 @@ warn_unused_configs = true
 typeCheckingMode = "strict"
 ```
 
-## Virtual Environments
-
-### Why Always Use a Virtual Environment
-
-- Isolates project dependencies from the system Python.
-- Ensures reproducible installs across machines.
-- Prevents version conflicts between projects.
-
-### Tools
-
-| Tool | Command | Notes |
-|---|---|---|
-| **uv** | `uv venv && source .venv/bin/activate` | Fastest, recommended |
-| **venv** (stdlib) | `python -m venv .venv` | Built-in, no install needed |
-| **virtualenv** | `virtualenv .venv` | Legacy, more features than venv |
-
-### Lock Files
-
-Python doesn't have a built-in lock file standard (unlike `package-lock.json`). Options:
-
-| Tool | Lock File | Notes |
-|---|---|---|
-| **uv** | `uv.lock` | Fast, deterministic, recommended |
-| **pip-tools** | `requirements.txt` (pinned) | `pip-compile` → pinned requirements |
-| **pdm** | `pdm.lock` | PEP-compliant manager |
-| **poetry** | `poetry.lock` | Popular but opinionated |
-
-## Dependency Management
-
-### Specifying Dependencies
-
-```toml
-[project]
-dependencies = [
-    "httpx>=0.27",
-    "click>=8.0,<9",
-    "pydantic>=2.0",
-]
-
-[project.optional-dependencies]
-dev = ["pytest>=8.0", "mypy", "ruff"]
-docs = ["sphinx", "furo"]
-```
-
-### Dependency Groups (PEP 735)
-
-```toml
-[dependency-groups]
-test = ["pytest>=8.0", "pytest-cov"]
-lint = ["ruff", "mypy"]
-dev = [{include-group = "test"}, {include-group = "lint"}]
-```
-
-## Entry Points
+## 5. Entry Points
 
 ### CLI Scripts
 
@@ -205,7 +152,7 @@ After installing, users can run `my-tool` directly from the command line.
 my_plugin = "my_plugin_package:Plugin"
 ```
 
-## Resources
+## 6. Resources
 
 - [Python Packaging User Guide](https://packaging.python.org) — authoritative packaging docs
 - [pyproject.toml specification](https://packaging.python.org/en/latest/specifications/pyproject-toml/) — PEP 621 fields

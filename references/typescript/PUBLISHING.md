@@ -1,10 +1,10 @@
 # npm Publishing Reference
 
-## Overview
+## 1. Overview
 
 This reference covers everything needed to publish a TypeScript package to npm — from `package.json` configuration through the `exports` map, pre-publish validation, scoped packages, and provenance.
 
-## package.json — Essential Fields
+## 2. Build & Content (package.json)
 
 ```json
 {
@@ -58,7 +58,7 @@ This reference covers everything needed to publish a TypeScript package to npm �
 | `repository` | Link to source code | Recommended |
 | `keywords` | Search terms | Recommended |
 
-## The `exports` Map
+### The `exports` Map
 
 The `exports` field is the modern way to define package entry points. It replaces `main`, `module`, and `types` at the top level.
 
@@ -122,7 +122,7 @@ Expose specific modules without exposing the entire `dist/`:
 - Paths must start with `./`.
 - If `exports` is defined, only exported paths are accessible to consumers.
 
-## The `files` Field
+### The `files` Field
 
 Controls what gets included in the published package (allowlist):
 
@@ -158,7 +158,7 @@ npm pack
 tar -tzf my-package-1.0.0.tgz
 ```
 
-## Scoped Packages
+### Scoped Packages
 
 Scoped packages are namespaced under an organization: `@org/package-name`.
 
@@ -192,7 +192,7 @@ Or set in `package.json`:
 2. Choose a name (this becomes the `@org` scope)
 3. Invite team members as needed
 
-## npm Provenance
+## 3. Authentication (npm Provenance)
 
 Provenance links a published package to its source commit and build workflow, providing supply-chain transparency.
 
@@ -216,7 +216,7 @@ steps:
 
 The published package will show a "Provenance" badge on npmjs.com linking to the exact commit and workflow.
 
-## Version Management
+## 4. Publishing Commands & Tags
 
 ### Manual Versioning
 
@@ -254,7 +254,7 @@ npm publish --tag beta
 
 Always use `--tag` for pre-releases to avoid overwriting the `latest` dist-tag.
 
-## Pre-Publish Checklist
+## 5. Versioning Semantics (Checklist)
 
 - [ ] `npm run build` succeeds
 - [ ] `npm run typecheck` passes (no type errors)
@@ -268,7 +268,7 @@ Always use `--tag` for pre-releases to avoid overwriting the `latest` dist-tag.
 - [ ] Git working directory is clean
 - [ ] Version follows SemVer
 
-## Dist-Tags
+### Dist-Tags
 
 ```bash
 # Publish with a custom tag
@@ -291,7 +291,7 @@ npm dist-tag rm my-package beta
 | `next` | Upcoming major version |
 | `canary` | Nightly/CI builds |
 
-## Unpublishing and Deprecation
+### Unpublishing & Deprecation
 
 ```bash
 # Deprecate a version (soft — warns on install)
@@ -306,7 +306,7 @@ npm unpublish my-package --force
 
 > **Prefer deprecation over unpublishing.** Unpublishing breaks dependents.
 
-## Resources
+## 6. Resources
 
 - [npm docs — package.json](https://docs.npmjs.com/cli/configuring-npm/package-json)
 - [Node.js — packages](https://nodejs.org/api/packages.html)

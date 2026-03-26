@@ -1,10 +1,10 @@
 # Rust Project Reference
 
-## Overview
+## 1. Overview
 
 This reference covers Rust-specific project setup, configuration, and patterns for open-source libraries (crates) and CLI tools. Rust's toolchain is unified — `cargo` handles building, testing, managing dependencies, and publishing.
 
-## Project Structure
+## 2. Project Structure
 
 ### Library Crate
 
@@ -75,7 +75,7 @@ serde = { version = "1", features = ["derive"] }
 tokio = { version = "1", features = ["full"] }
 ```
 
-## Cargo.toml
+## 3. Configuration (Cargo.toml)
 
 ### Complete Library Example
 
@@ -116,7 +116,7 @@ tokio = { version = "1", features = ["test-util", "macros"] }
 | `keywords` | Up to 5 search keywords | Recommended |
 | `categories` | Up to 5 from [crates.io categories](https://crates.io/categories) | Recommended |
 
-## Edition and MSRV
+## 4. Modules, Types & Features
 
 ### Editions
 
@@ -139,7 +139,7 @@ rust-version = "1.85"
 - CI should test on both the MSRV and stable.
 - Use `cargo msrv` to find the minimum version automatically.
 
-## Features
+### Features
 
 Feature flags allow conditional compilation:
 
@@ -168,205 +168,9 @@ pub fn parse_json(input: &str) -> Result<Value, Error> {
 - Use `dep:` syntax (Rust 1.60+) to avoid implicit feature names.
 - Document all features in README.
 
-## Testing
-
-Rust has built-in testing — no additional framework needed.
-
-### Unit Tests (in source files)
-
-```rust
-pub fn add(a: i32, b: i32) -> i32 {
-    a + b
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_add() {
-        assert_eq!(add(1, 2), 3);
-    }
-
-    #[test]
-    #[should_panic(expected = "overflow")]
-    fn test_overflow() {
-        add(i32::MAX, 1);
-    }
-}
-```
-
-### Integration Tests (in `tests/` directory)
-
-```rust
-// tests/integration_test.rs
-use my_crate::add;
-
-#[test]
-fn test_add_externally() {
-    assert_eq!(add(1, 2), 3);
-}
-```
-
-### Running Tests
-
-```bash
-cargo test                      # all tests
-cargo test --lib                # unit tests only
-cargo test --test integration   # specific integration test
-cargo test -- --nocapture       # show println! output
-```
-
-### Additional Test Tools
-
-| Tool | Purpose |
-|---|---|
-| **cargo-nextest** | Faster test runner, better output |
-| **proptest** | Property-based testing |
-| **criterion** | Benchmarking |
-| **insta** | Snapshot testing |
-
-## Linting and Formatting
-
-### Clippy (Linter)
-
-```bash
-cargo clippy                            # default lints
-cargo clippy -- -W clippy::pedantic     # stricter lints
-cargo clippy -- -D warnings             # treat warnings as errors (CI)
-```
-
-Configure in `Cargo.toml` or `clippy.toml`:
-
-```toml
-# Cargo.toml
-[lints.clippy]
-pedantic = { level = "warn", priority = -1 }
-module_name_repetitions = "allow"
-must_use_candidate = "allow"
-```
-
-### Rustfmt (Formatter)
-
-```bash
-cargo fmt                   # format
-cargo fmt -- --check        # check (CI)
-```
-
-Configure in `rustfmt.toml`:
-
-```toml
-edition = "2024"
-max_width = 100
-use_field_init_shorthand = true
-```
-
-## CI/CD (GitHub Actions)
-
-### Basic CI Workflow
-
-```yaml
-name: CI
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-
-jobs:
-  check:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: dtolnay/rust-toolchain@stable
-        with:
-          components: clippy, rustfmt
-      - uses: Swatinem/rust-cache@v2
-      - run: cargo fmt -- --check
-      - run: cargo clippy -- -D warnings
-      - run: cargo test
-
-  msrv:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: dtolnay/rust-toolchain@1.85  # MSRV
-      - uses: Swatinem/rust-cache@v2
-      - run: cargo test
-```
-
-## Documentation
-
-### rustdoc (Built-In)
-
-```bash
-cargo doc --open              # build and open docs
-cargo doc --no-deps           # skip dependency docs
-```
-
-Doc comments:
-
-```rust
-/// Adds two numbers.
-///
-/// # Examples
-///
-/// ```
-/// use my_crate::add;
-/// assert_eq!(add(1, 2), 3);
-/// ```
-///
-/// # Panics
-///
-/// Panics on integer overflow in debug mode.
-pub fn add(a: i32, b: i32) -> i32 {
-    a + b
-}
-```
-
-### docs.rs
-
-- All crates published to crates.io get automatic documentation on [docs.rs](https://docs.rs).
-- Configure with `[package.metadata.docs.rs]` in `Cargo.toml`:
-
-```toml
-[package.metadata.docs.rs]
-all-features = true
-```
-
-## Cross-Compilation
-
-### Common Targets
-
-```bash
-# Add a target
-rustup target add x86_64-unknown-linux-musl
-
-# Build for target
-cargo build --release --target x86_64-unknown-linux-musl
-```
-
-### Cross-Compilation Tool: `cross`
-
-```bash
-cargo install cross
-cross build --release --target aarch64-unknown-linux-gnu
-```
-
-### Binary Releases with cargo-dist
-
-```bash
-cargo install cargo-dist
-cargo dist init                 # configure
-cargo dist build                # build for all targets
-```
-
-Or use **GoReleaser** with `goreleaser-cross` for multi-arch binaries.
-
-## Resources
+## 5. Resources
 
 - [The Rust Programming Language](https://doc.rust-lang.org/book/) — official book
 - [Cargo Book](https://doc.rust-lang.org/cargo/) — cargo reference
 - [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/) — API design best practices
 - [docs.rs](https://docs.rs) — automatic crate documentation
-- [This Week in Rust](https://this-week-in-rust.org) — weekly newsletter

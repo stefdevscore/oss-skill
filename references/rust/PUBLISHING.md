@@ -1,10 +1,10 @@
 # crates.io Publishing Reference
 
-## Overview
+## 1. Overview
 
 This reference covers publishing Rust crates to [crates.io](https://crates.io) — from preparing `Cargo.toml` metadata through publishing, yanking, and release automation.
 
-## Cargo.toml — Required Publishing Fields
+## 2. Build & Content (Cargo.toml Metadata)
 
 ```toml
 [package]
@@ -36,7 +36,7 @@ categories = ["command-line-utilities"]        # max 5, from crates.io list
 | `homepage` | Optional | Separate from repository |
 | `rust-version` | Recommended | MSRV |
 
-## Dual Licensing
+### Dual Licensing
 
 The Rust ecosystem convention is dual licensing under MIT and Apache-2.0:
 
@@ -52,7 +52,7 @@ LICENSE-APACHE
 
 **Why dual license?** Apache-2.0 provides patent protection. MIT provides simplicity. Users choose whichever suits them. Most major Rust crates follow this convention.
 
-## Package Contents
+### Package Contents
 
 ### What Gets Published
 
@@ -100,7 +100,7 @@ ls -la target/package/
 cargo package --verify
 ```
 
-## Authentication
+## 3. Authentication
 
 ### Login
 
@@ -132,7 +132,7 @@ Create tokens with specific permissions at [crates.io/settings/tokens](https://c
     CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
 ```
 
-## Publishing
+## 4. Publishing Commands
 
 ### First-Time Publish
 
@@ -217,7 +217,7 @@ cargo dist init
 # Follow prompts, commit generated CI config
 ```
 
-## Versioning
+## 5. Versioning Semantics
 
 ### SemVer in Rust
 
@@ -259,7 +259,7 @@ pub enum Error {
 }
 ```
 
-## Yanking
+### Yanking
 
 Yanking prevents new projects from depending on a version, but existing users are unaffected:
 
@@ -274,14 +274,14 @@ cargo yank --version 1.0.1 --undo
 - Yanked versions still work in existing `Cargo.lock` files.
 - **Prefer yanking over any other removal** — crates.io does not support true unpublishing.
 
-## Crate Naming
+### Crate Naming
 
 - Use lowercase with hyphens: `my-crate` (Cargo normalizes hyphens and underscores).
 - The Rust import name uses underscores: `use my_crate::foo;`
 - Check availability: search on [crates.io](https://crates.io).
 - Name squatting is against crates.io policy.
 
-## Pre-Publish Checklist
+### Pre-Publish Checklist
 
 - [ ] `cargo build --release` succeeds
 - [ ] `cargo test` passes
@@ -297,7 +297,7 @@ cargo yank --version 1.0.1 --undo
 - [ ] `rust-version` (MSRV) is set and tested in CI
 - [ ] Git tag matches the version
 
-## Resources
+## 6. Resources
 
 - [Cargo Book — Publishing](https://doc.rust-lang.org/cargo/reference/publishing.html)
 - [crates.io](https://crates.io) — Rust package registry

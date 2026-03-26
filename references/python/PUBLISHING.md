@@ -1,10 +1,10 @@
 # PyPI Publishing Reference
 
-## Overview
+## 1. Overview
 
 This reference covers publishing Python packages to PyPI — from `pyproject.toml` metadata through building, uploading, trusted publishing, and versioning.
 
-## pyproject.toml — Publishing Fields
+## 2. Build & Content (pyproject.toml)
 
 ```toml
 [build-system]
@@ -47,7 +47,7 @@ Classifiers are PyPI's tagging system. Important categories:
 
 Full list: [pypi.org/classifiers](https://pypi.org/classifiers/)
 
-## Building the Package
+### Building the Package
 
 ### Standard Build
 
@@ -101,7 +101,7 @@ unzip -l dist/my_package-1.0.0-py3-none-any.whl
 pip install dist/my_package-1.0.0-py3-none-any.whl
 ```
 
-## Publishing to PyPI
+## 3. Authentication & Publishing
 
 ### Method 1: Trusted Publishing (Recommended)
 
@@ -180,7 +180,7 @@ twine upload --repository testpypi dist/*
 pip install --index-url https://test.pypi.org/simple/ my-package
 ```
 
-## Versioning
+## 4. Versioning Semantics
 
 ### Single Source of Truth
 
@@ -241,13 +241,13 @@ hatch version major   # 1.0.0 → 2.0.0
 
 Per [PEP 440](https://peps.python.org/pep-0440/) — Python uses different pre-release notation than SemVer.
 
-## Package Naming
+### Package Naming
 
 - Use lowercase with hyphens: `my-package` (PyPI normalizes to `my-package`).
 - The import name uses underscores: `import my_package`.
 - Check availability: `pip index versions my-package`.
 
-## Yanking
+### Yanking
 
 Yanking marks a version as unsuitable without fully removing it:
 
@@ -261,7 +261,7 @@ Yanked versions:
 - Still available if explicitly requested by version.
 - Preferable to full deletion (doesn't break pinned installs).
 
-## Pre-Publish Checklist
+### Pre-Publish Checklist
 
 - [ ] `python -m build` succeeds
 - [ ] `twine check dist/*` passes
@@ -276,7 +276,7 @@ Yanked versions:
 - [ ] Tested on TestPyPI first (for new packages)
 - [ ] Git tag matches the version
 
-## Resources
+## 5. Resources
 
 - [Python Packaging User Guide](https://packaging.python.org) — authoritative docs
 - [PyPI](https://pypi.org) — Python Package Index

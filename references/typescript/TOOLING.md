@@ -1,10 +1,10 @@
 # TypeScript/JavaScript Tooling Reference
 
-## Overview
+## 1. Overview
 
 Recommended tooling for TypeScript/JavaScript open-source projects. Tools are grouped by function with opinionated recommendations for modern projects.
 
-## Build Tools
+## 2. Dependency Management & Scripts
 
 | Tool | Type | Best For |
 |---|---|---|
@@ -48,7 +48,7 @@ export default defineConfig({
 2. **Use `tsup` or `esbuild`** for fast compilation and bundling.
 3. **Generate `.d.ts`** via `tsup --dts` or `tsc --emitDeclarationOnly`.
 
-## Test Frameworks
+## 3. Testing
 
 | Tool | Language | Style | Best For |
 |---|---|---|---|
@@ -113,7 +113,7 @@ Run with: `node --test tests/`
 }
 ```
 
-## Linting
+## 4. Linting & Formatting
 
 ### ESLint (Flat Config)
 
@@ -155,7 +155,7 @@ export default tseslint.config(
 }
 ```
 
-## Formatting
+### Formatting Logic
 
 | Tool | Approach |
 |---|---|
@@ -202,7 +202,7 @@ export default tseslint.config(
 }
 ```
 
-## Package Management
+### Package Managers
 
 | Manager | Lockfile | Workspaces | Speed | Disk Usage |
 |---|---|---|---|---|
@@ -212,7 +212,7 @@ export default tseslint.config(
 
 **Recommendation**: Use `pnpm` for monorepos and disk efficiency. Use `npm` for simplicity and maximum compatibility.
 
-## CI/CD (GitHub Actions)
+## 6. CI/CD (GitHub Actions)
 
 ### Basic CI Workflow
 
@@ -272,7 +272,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 ```
 
-## Documentation
+## 5. Documentation
 
 | Tool | Output | Best For |
 |---|---|---|
@@ -311,7 +311,7 @@ export function add(a: number, b: number): number {
 }
 ```
 
-## Release Management
+### Release Management
 
 | Tool | Approach | Best For |
 |---|---|---|

@@ -1,10 +1,10 @@
 # Python Tooling Reference
 
-## Overview
+## 1. Overview
 
 Recommended tooling for Python open-source projects. The ecosystem has modernized significantly — `ruff` and `uv` from Astral have become the de facto standards for linting and package management.
 
-## Package / Environment Management
+## 2. Dependency Management & Virtual Environments
 
 | Tool | Purpose | Speed | Notes |
 |---|---|---|---|
@@ -31,7 +31,22 @@ uv lock
 uv run pytest
 ```
 
-## Testing
+### Virtual Environments & Lock Files
+
+- Always use a virtual environment to isolate project dependencies.
+- Use `uv.lock` to track deterministic installs, or `requirements.txt` (via `pip-tools`).
+
+### Specifying Dependencies (pyproject.toml)
+
+```toml
+[project]
+dependencies = ["httpx>=0.27", "pydantic>=2.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "mypy", "ruff"]
+```
+
+## 3. Testing
 
 | Tool | Style | Best For |
 |---|---|---|
@@ -87,7 +102,7 @@ def tests(session):
 
 Run with: `nox`
 
-## Linting and Formatting
+## 4. Linting and Formatting
 
 | Tool | Purpose | Speed | Notes |
 |---|---|---|---|
@@ -139,7 +154,7 @@ ruff format . --check           # format check (CI)
 mypy src/                       # type check
 ```
 
-## CI/CD (GitHub Actions)
+## 5. CI/CD (GitHub Actions)
 
 ### Basic CI Workflow
 
@@ -198,7 +213,7 @@ jobs:
       - uses: pypa/gh-action-pypi-publish@release/v1
 ```
 
-## Documentation
+## 6. Documentation
 
 | Tool | Output | Best For |
 |---|---|---|
@@ -227,7 +242,7 @@ mkdocs serve
 - **Read the Docs** — free for OSS, auto-builds from Git pushes
 - **GitHub Pages** — `mkdocs gh-deploy` or Sphinx + CI
 
-## Task Runners
+## 7. Task Runners
 
 Python doesn't have `npm scripts`. Common alternatives:
 
