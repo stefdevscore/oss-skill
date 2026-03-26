@@ -1,10 +1,6 @@
 ---
-name: internals-open-source-software
+name: oss-skill
 description: High-density guidance for OSS lifecycle - Inception, Licensing, Distribution, and Multi-language Porting.
-compatibility: OS-agnostic core. Ecosystems: TS/JS (Node 20+), PY (3.10+), RS (Stable).
-metadata:
-  version: "1.1.0"
-  status: "Tokenized & Project-Enhanced"
 ---
 
 ## 🎯 SCOPE [TOKEN: CORE_OSS]
