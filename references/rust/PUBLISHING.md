@@ -102,6 +102,10 @@ cargo package --verify
 
 ## 3. Authentication
 
+### Recommended Default
+
+Prefer non-interactive publishing in CI with a registry token or trusted publishing. Use `cargo login` mainly for local/manual publishing.
+
 ### Login
 
 ```bash
@@ -131,6 +135,8 @@ Create tokens with specific permissions at [crates.io/settings/tokens](https://c
   env:
     CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
 ```
+
+If your registry supports trusted publishing for your workflow, that is also a good default because it avoids long-lived tokens.
 
 ## 4. Publishing Commands
 

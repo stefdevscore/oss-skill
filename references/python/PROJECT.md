@@ -33,7 +33,7 @@ project-root/
 | **src layout** | `src/my_package/` | Libraries — prevents accidental import of uninstalled code |
 | **flat layout** | `my_package/` at root | Small projects, scripts, applications |
 
-**Recommended**: src layout for anything published to PyPI.
+Common default: `src/` layout is often the safest choice for packages published to PyPI because it reduces accidental import-path leakage during tests.
 
 ## 3. Configuration (pyproject.toml)
 
@@ -96,7 +96,7 @@ my-cli = "my_package.cli:main"
 | **maturin** | Rust + Python | Python bindings for Rust code |
 | **pdm-backend** | PEP-compliant | pdm users |
 
-**Recommended**: `hatchling` for new projects.
+Common modern choice: `hatchling` is a strong default for simple packages, but other backends can be more appropriate when plugin ecosystems, compiled extensions, or existing team conventions matter.
 
 ## 4. Modules & Types (Type Hints)
 

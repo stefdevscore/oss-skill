@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-Recommended tooling for TypeScript/JavaScript open-source projects. Tools are grouped by function with opinionated recommendations for modern projects.
+Common tooling options for TypeScript/JavaScript open-source projects. Treat the examples here as a menu of tradeoffs, not mandatory defaults.
 
 ## 2. Dependency Management & Scripts
 
@@ -15,7 +15,7 @@ Recommended tooling for TypeScript/JavaScript open-source projects. Tools are gr
 | **unbuild** | Bundler (rollup-based) | Zero-config library builds, auto-infers from `package.json` |
 | **swc** | Transpiler | Drop-in `tsc` replacement for speed (no type checking) |
 
-### Recommended: `tsup`
+### Example: `tsup`
 
 Minimal config for a library:
 
@@ -57,7 +57,7 @@ export default defineConfig({
 | **node:test** | JS | Built-in | Zero-dependency, Node.js-native |
 | **playwright** | JS/TS | E2E | Browser and API testing |
 
-### Recommended: `vitest`
+### Example: `vitest`
 
 ```js
 // vitest.config.mjs
@@ -210,7 +210,9 @@ export default tseslint.config(
 | **pnpm** | `pnpm-lock.yaml` | Yes | Fast | Low (content-addressable) |
 | **yarn** (v4) | `yarn.lock` | Yes | Fast | Moderate |
 
-**Recommendation**: Use `pnpm` for monorepos and disk efficiency. Use `npm` for simplicity and maximum compatibility.
+Typical tradeoff:
+- `pnpm` is attractive for large workspaces and disk efficiency.
+- `npm` is attractive for maximum compatibility and lower contributor surprise.
 
 ## 6. CI/CD (GitHub Actions)
 

@@ -36,7 +36,7 @@ project-root/
 
 ## 3. Configuration (tsconfig)
 
-### Recommended Base for Libraries
+### Common Base for Libraries
 
 ```jsonc
 {
@@ -100,7 +100,7 @@ Create `tsconfig.build.json` to exclude test helpers and scripts:
 
 ## 4. Modules & Types
 
-### ESM-First (Recommended)
+### ESM-First (Common Modern Choice)
 
 Set `"type": "module"` in `package.json`. All `.js` files are treated as ESM. Use `.cjs` extension for any CommonJS files.
 

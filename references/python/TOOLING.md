@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-Recommended tooling for Python open-source projects. The ecosystem has modernized significantly — `ruff` and `uv` from Astral have become the de facto standards for linting and package management.
+Common tooling options for Python open-source projects. The ecosystem has modernized significantly, but projects should choose tools based on compatibility, contributor familiarity, and release requirements.
 
 ## 2. Dependency Management & Virtual Environments
 
@@ -15,7 +15,7 @@ Recommended tooling for Python open-source projects. The ecosystem has modernize
 | **pdm** | PEP-compliant manager | Moderate | Lock file, workspaces |
 | **poetry** | Project management | Moderate | Popular, opinionated (non-standard lock) |
 
-### Recommended: `uv`
+### Example: `uv`
 
 ```bash
 # Create virtual environment
@@ -56,7 +56,7 @@ dev = ["pytest>=8.0", "mypy", "ruff"]
 | **hypothesis** | Property-based | Edge-case discovery |
 | **tox / nox** | Multi-env runner | Testing across Python versions |
 
-### Recommended: `pytest`
+### Example: `pytest`
 
 ```toml
 # pyproject.toml
@@ -112,7 +112,7 @@ Run with: `nox`
 | **black** | Formatter | Moderate | Legacy — ruff format is the modern replacement |
 | **isort** | Import sorter | Moderate | Legacy — ruff handles this |
 
-### Recommended: `ruff` + `mypy`
+### Example pairing: `ruff` + `mypy`
 
 ```toml
 # pyproject.toml

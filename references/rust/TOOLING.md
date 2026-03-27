@@ -191,8 +191,13 @@ cargo install cargo-dist
 cargo dist init                 # configure github actions CI
 ```
 
-## 7. Resources
-
+## 7. Troubleshooting & Limits
++
++### Crates.io Rate Limits (429)
++Crates.io enforces a **24-hour publishing limit** for new versions of the same crate. If performing rapid monorepo synchronizations, ensure each version is definitive to avoid hitting this wall.
++
++## 8. Resources
++
 - [Clippy Lints](https://rust-lang.github.io/rust-clippy/master/)
 - [Nextest](https://nexte.st/)
 - [cargo-dist](https://opensource.axo.dev/cargo-dist/)

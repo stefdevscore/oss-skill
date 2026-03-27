@@ -216,6 +216,8 @@ steps:
 
 The published package will show a "Provenance" badge on npmjs.com linking to the exact commit and workflow.
 
+If you use npm trusted publishing, provenance is generated as part of the publish flow. `--access public` is still required for first publish of scoped public packages unless `publishConfig.access` is already set.
+
 ## 4. Publishing Commands & Tags
 
 ### Manual Versioning
