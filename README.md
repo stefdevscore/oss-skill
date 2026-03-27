@@ -14,12 +14,14 @@ A project-agnostic skill for designing, structuring, verifying, and distributing
 - Governance models and project sustainability
 - Security and supply-chain integrity
 - Decision frameworks for choosing tools rather than hard-coding one stack
+- Local-only knowledge capture for repository-specific operator context
 
 ## Structure
 
 ```
 ├── SKILL.md                      # Main skill instructions
 ├── RESEARCH.md                   # Roadmap and future additions
+├── .internals/                   # Local-only repo/domain knowledge (ignored except for README)
 ├── docs/
 │   └── adrs/                     # Architecture decision records for the skill itself
 ├── references/
@@ -53,6 +55,7 @@ A project-agnostic skill for designing, structuring, verifying, and distributing
 | Guide | Description |
 |---|---|
 | [RESEARCH.md](RESEARCH.md) | Roadmap for future ecosystem expansions and advanced OSS patterns |
+| [.internals/README.md](.internals/README.md) | Convention for local-only, repo-specific knowledge capture |
 | [docs/adrs/README.md](docs/adrs/README.md) | Decision log for the skill's own structure, scope, and maintenance model |
 | [LICENSING.md](references/LICENSING.md) | Comparison matrix of common OSS licenses, decision flowchart, and how to apply a license |
 | [DISTRIBUTION.md](references/DISTRIBUTION.md) | Package registries by ecosystem, SemVer, changelogs, and release automation |

@@ -22,6 +22,7 @@ description: Project-agnostic guidance for OSS lifecycle decisions across licens
   - Keep source, tests, examples, scripts, and generated artifacts clearly separated.
   - Use ecosystem-standard manifests and lockfiles where appropriate.
   - Treat build output as generated unless the ecosystem has a strong reason to check it in.
+  - Use a local-only folder such as `.internals/` for repository-specific operator notes, domain knowledge, and CI learnings that should not be promoted into canonical docs by default.
 
 ### 3. Implementation Patterns [TOKEN: OSS_PATTERNS]
 - **Dependencies**: Prefer the simplest dependency set that preserves clarity, security, and maintainability; do not optimize for dependency count alone.
@@ -33,6 +34,7 @@ description: Project-agnostic guidance for OSS lifecycle decisions across licens
 - `TEST_STRATEGY`: Use the ecosystem’s standard test runner or an established project convention.
 - `QUALITY_GATES`: Validate formatting, linting, type checking, tests, package contents, and installability before release.
 - `MANUAL_CHECKS`: Verify the user-facing contract for real install and runtime paths, not just source-tree execution.
+- `KNOWLEDGE_CAPTURE`: Record repo-specific findings in a local-only layer first, then promote only durable and broadly reusable conclusions into tracked docs or ADRs.
 
 ### 5. Publishing [PHASE: RELEASE]
 - `AUTH`: Prefer non-interactive CI publishing using trusted publishing or scoped registry tokens. Reserve interactive login flows for local/manual releases.
