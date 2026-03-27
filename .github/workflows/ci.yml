@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify required files exist
+        run: |
+          test -f SKILL.md
+          test -f README.md
+          test -f RESEARCH.md
+          test -f LICENSE
+          test -d references
+          test -d docs/adrs
+
+      - name: Verify ADR ordering
+        run: |
+          ls docs/adrs/ADR-*.md | sort | diff -u - <(ls docs/adrs/ADR-*.md)
+
+      - name: Verify project-agnostic wording
+        run: |
+          ! rg -n "agent-map|agentcode|unDraw|internals-open-source-software" .
